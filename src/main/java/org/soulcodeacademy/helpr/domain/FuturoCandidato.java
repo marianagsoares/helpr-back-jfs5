@@ -11,10 +11,10 @@ public class FuturoCandidato {
         @GeneratedValue(strategy = GenerationType.IDENTITY)
         Integer id;
 
-        @Column(nullable = false, length = 150)
+        @Column(nullable = false)
         String nomeCompleto;
 
-        @Column (nullable = false, length = 120)
+        @Column (nullable = false)
         String email;
 
         @Column (nullable = false, length = 120)

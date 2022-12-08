@@ -12,9 +12,10 @@ import java.util.Optional;
 @Repository
 public interface FuturoCandidatoRepository extends JpaRepository<FuturoCandidato, Integer> {
 
-    Optional<FuturoCandidato> findByEmail(String email);
 
-    List<FuturoCandidato> findByNomeCompleto(String nomeCompleto);
+    List<FuturoCandidato> findByEmail(String email);
+
+    List<FuturoCandidato> findByNomeCompletoContaining(String nome);
 
     List<FuturoCandidato> findBySetor(Setor setor);
 
