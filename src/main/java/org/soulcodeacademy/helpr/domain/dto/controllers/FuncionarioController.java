@@ -1,4 +1,4 @@
-package org.soulcodeacademy.helpr.controllers;
+package org.soulcodeacademy.helpr.domain.dto.controllers;
 
 import org.soulcodeacademy.helpr.domain.Funcionario;
 import org.soulcodeacademy.helpr.domain.dto.FuncionarioDTO;

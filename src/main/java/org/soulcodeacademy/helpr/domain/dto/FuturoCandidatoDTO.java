@@ -1,8 +1,9 @@
-package org.soulcodeacademy.helpr.domain;
+package org.soulcodeacademy.helpr.domain.dto;
 
 import org.soulcodeacademy.helpr.domain.enums.Setor;
 
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 public class FuturoCandidatoDTO {
 
@@ -17,7 +18,7 @@ public class FuturoCandidatoDTO {
     private String descricaoDasHabilidades;
 
 
-    @NotBlank(message = "Setor obrigatório")
+    @NotNull(message = "Setor obrigatório")
     private Setor setor;
 
 
