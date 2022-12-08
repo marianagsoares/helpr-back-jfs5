@@ -3,10 +3,7 @@ package org.soulcodeacademy.helpr.services;
 import org.soulcodeacademy.helpr.domain.*;
 import org.soulcodeacademy.helpr.domain.enums.Perfil;
 import org.soulcodeacademy.helpr.domain.enums.StatusChamado;
-import org.soulcodeacademy.helpr.repositories.CargoRepository;
-import org.soulcodeacademy.helpr.repositories.ChamadoRepository;
-import org.soulcodeacademy.helpr.repositories.ClienteRepository;
-import org.soulcodeacademy.helpr.repositories.FuncionarioRepository;
+import org.soulcodeacademy.helpr.repositories.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -27,6 +24,9 @@ public class PopulateService {
 
     @Autowired
     private ChamadoRepository chamadoRepository;
+
+    @Autowired
+    private FuturoClienteRepository futuroClienteRepository;
 
     @Autowired
     private PasswordEncoder encoder;
@@ -83,13 +83,17 @@ public class PopulateService {
         ch7.setStatus(StatusChamado.CONCLUIDO);
 
 
-        FuturoCliente fc1 = new FuturoCliente(null, "Josefina Mendes", "88889954",  "jm@gmail.com", "544558855");
+        FuturoCliente fc1 = new FuturoCliente(null, "Josefina Mendes", "11086594037",  "josefina.mendes@gmail.com", "544558855");
+        FuturoCliente fc2 = new FuturoCliente(null, "Genésio Lima", "83924156042",  "gl@gmail.com", "54488888");
+        FuturoCliente fc3 = new FuturoCliente(null, "Gabriel Liberato", "36255223060",  "gl@gmail.com", "54488888");
+
 
         // vamos persistir as entidades = salvar no banco
         this.cargoRepository.saveAll(List.of(c1, c2, c3));
         this.funcionarioRepository.saveAll(List.of(f1, f2, f3, f4, f5, f6, f7, f8, f9, f10));
         this.clienteRepository.saveAll(List.of(cl1, cl2, cl3, cl4, cl5));
         this.chamadoRepository.saveAll(List.of(ch1, ch2, ch3, ch4, ch5, ch6, ch7));
+        this.futuroClienteRepository.saveAll(List.of(fc1, fc2, fc3));
     }
 }
 

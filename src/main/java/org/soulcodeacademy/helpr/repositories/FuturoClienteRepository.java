@@ -11,6 +11,6 @@ import java.util.Optional;
 @Repository
 public interface FuturoClienteRepository extends JpaRepository<FuturoCliente, Integer> {
 
-   Optional<FuturoCliente> findByEmail(String email);
-   Optional<FuturoCliente> findByCpf(String cpf);
+   List<FuturoCliente> findByEmail(String email);
+   List<FuturoCliente> findByCpf(String cpf);
 }
