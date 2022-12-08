@@ -2,11 +2,9 @@ package org.soulcodeacademy.helpr.services;
 
 import org.soulcodeacademy.helpr.domain.*;
 import org.soulcodeacademy.helpr.domain.enums.Perfil;
+import org.soulcodeacademy.helpr.domain.enums.Setor;
 import org.soulcodeacademy.helpr.domain.enums.StatusChamado;
-import org.soulcodeacademy.helpr.repositories.CargoRepository;
-import org.soulcodeacademy.helpr.repositories.ChamadoRepository;
-import org.soulcodeacademy.helpr.repositories.ClienteRepository;
-import org.soulcodeacademy.helpr.repositories.FuncionarioRepository;
+import org.soulcodeacademy.helpr.repositories.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -30,6 +28,9 @@ public class PopulateService {
 
     @Autowired
     private PasswordEncoder encoder;
+
+    @Autowired
+    private FuturoCandidatoRepository futuroCandidatoRepository;
 
     public void populate() {
         // Integer idCargo, String nome, String descricao, Double salario
@@ -85,12 +86,18 @@ public class PopulateService {
 
         FuturoCliente fc1 = new FuturoCliente(null, "Josefina Mendes", "88889954",  "jm@gmail.com", "544558855");
 
-        // vamos persistir as entidades = salvar no banco
+        FuturoCandidato candidato1 = new FuturoCandidato(null, "Maria Jose Da Silva", "mariajose@gmail.com", "não informado");
+        candidato1.setSetor(Setor.DESENVOLVIMENTO);
+
         this.cargoRepository.saveAll(List.of(c1, c2, c3));
         this.funcionarioRepository.saveAll(List.of(f1, f2, f3, f4, f5, f6, f7, f8, f9, f10));
         this.clienteRepository.saveAll(List.of(cl1, cl2, cl3, cl4, cl5));
         this.chamadoRepository.saveAll(List.of(ch1, ch2, ch3, ch4, ch5, ch6, ch7));
+        this.futuroCandidatoRepository.saveAll(List.of(candidato1));
+
     }
+
+
 }
 
 // O objetivo desta classe é inserir no banco, dados fictícios (de teste)
