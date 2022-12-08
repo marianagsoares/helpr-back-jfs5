@@ -27,6 +27,9 @@ public class PopulateService {
     private ChamadoRepository chamadoRepository;
 
     @Autowired
+    private FuturoClienteRepository futuroClienteRepository;
+
+    @Autowired
     private PasswordEncoder encoder;
 
     @Autowired
@@ -84,7 +87,10 @@ public class PopulateService {
         ch7.setStatus(StatusChamado.CONCLUIDO);
 
 
-        FuturoCliente fc1 = new FuturoCliente(null, "Josefina Mendes", "88889954",  "jm@gmail.com", "544558855");
+        FuturoCliente fc1 = new FuturoCliente(null, "Josefina Mendes", "11086594037",  "josefina.mendes@gmail.com", "544558855");
+        FuturoCliente fc2 = new FuturoCliente(null, "Genésio Lima", "83924156042",  "gl@gmail.com", "54488888");
+        FuturoCliente fc3 = new FuturoCliente(null, "Gabriel Liberato", "36255223060",  "gl@gmail.com", "54488888");
+
 
         FuturoCandidato candidato1 = new FuturoCandidato(null, "Maria Jose Da Silva", "mariajose@gmail.com", "não informado");
         candidato1.setSetor(Setor.DESENVOLVIMENTO);
@@ -93,6 +99,7 @@ public class PopulateService {
         this.funcionarioRepository.saveAll(List.of(f1, f2, f3, f4, f5, f6, f7, f8, f9, f10));
         this.clienteRepository.saveAll(List.of(cl1, cl2, cl3, cl4, cl5));
         this.chamadoRepository.saveAll(List.of(ch1, ch2, ch3, ch4, ch5, ch6, ch7));
+        this.futuroClienteRepository.saveAll(List.of(fc1, fc2, fc3));
         this.futuroCandidatoRepository.saveAll(List.of(candidato1));
 
     }

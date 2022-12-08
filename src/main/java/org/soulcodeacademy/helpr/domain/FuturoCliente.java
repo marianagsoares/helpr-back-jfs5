@@ -12,15 +12,15 @@ public class FuturoCliente {
     private String nome;
     @Column (nullable = false)
     private String telefone;
-    @Column (nullable = false)
+    @Column (nullable = false, unique = true)
     private String email;
-    @Column (nullable = false)
+    @Column (nullable = false, unique = true)
     private String cpf;
 
     public FuturoCliente (){
 
     }
-    public FuturoCliente(Integer idFuturoCliente, String nome, String telefone, String email, String cpf) {
+    public FuturoCliente(Integer idFuturoCliente, String nome,  String cpf, String email, String telefone) {
         this.idFuturoCliente = idFuturoCliente;
         this.nome = nome;
         this.telefone = telefone;
