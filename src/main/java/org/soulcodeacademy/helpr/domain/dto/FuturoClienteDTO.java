@@ -14,12 +14,14 @@ public class FuturoClienteDTO {
     @NotBlank(message = "Nome é obrigatório")
     private String telefone;
 
-    @Email
+
     @NotBlank(message = "Email é obrigatório")
+    @Email
     private String email;
 
-    @CPF
+
     @NotBlank(message = "CPF é obrigatório")
+    @CPF
     private String cpf;
 
     public String getNome() {
