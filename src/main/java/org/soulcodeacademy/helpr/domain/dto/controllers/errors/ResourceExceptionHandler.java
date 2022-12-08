@@ -1,4 +1,4 @@
-package org.soulcodeacademy.helpr.controllers.errors;
+package org.soulcodeacademy.helpr.domain.dto.controllers.errors;
 
 import org.soulcodeacademy.helpr.services.errors.DataIntegrityViolationException;
 import org.soulcodeacademy.helpr.services.errors.ParametrosInsuficientesError;

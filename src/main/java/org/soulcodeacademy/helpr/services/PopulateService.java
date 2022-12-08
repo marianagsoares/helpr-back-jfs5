@@ -90,15 +90,28 @@ public class PopulateService {
         FuturoCliente fc1 = new FuturoCliente(null, "Josefina Mendes", "11086594037",  "josefina.mendes@gmail.com", "544558855");
         FuturoCliente fc2 = new FuturoCliente(null, "Genésio Lima", "83924156042",  "genesio.lima@gmail.com", "54488888");
 
-        FuturoCandidato candidato1 = new FuturoCandidato(null, "Maria Jose Da Silva", "mariajose@gmail.com", "não informado");
+        FuturoCandidato candidato1 = new FuturoCandidato(null, "Maria Jose Da Silva", "mariajose@gmail.com", "Boa comunicação, Liderança");
         candidato1.setSetor(Setor.DESENVOLVIMENTO);
+
+        FuturoCandidato candidato2 = new FuturoCandidato(null, "Maria cícera Gomes", "maria@gmail.com","Flexibilidade, Proatividade");
+        candidato2.setSetor(Setor.SUSTENTACAO);
+
+        FuturoCandidato candidato3 = new FuturoCandidato(null, "Marco Bueno Trajano", "bueno@gmail.com","Organização, Liderança");
+        candidato3.setSetor(Setor.RECURSOS_HUMANOS);
+
+        FuturoCandidato candidato4 = new FuturoCandidato(null, "Jandira Louise Braga", "jandira@gmail.com","Resolução de problemas , Resiliência");
+        candidato4.setSetor(Setor.MANUTENCAO);
+
+        FuturoCandidato candidato5 = new FuturoCandidato(null, "Aline Bruna Lima", "lima@gmail.com", "Criatividade, Controle emocional");
+        candidato5.setSetor(Setor.MARKETING);
+
 
         this.cargoRepository.saveAll(List.of(c1, c2, c3));
         this.funcionarioRepository.saveAll(List.of(f1, f2, f3, f4, f5, f6, f7, f8, f9, f10));
         this.clienteRepository.saveAll(List.of(cl1, cl2, cl3, cl4, cl5));
         this.chamadoRepository.saveAll(List.of(ch1, ch2, ch3, ch4, ch5, ch6, ch7));
+        this.futuroCandidatoRepository.saveAll(List.of(candidato1, candidato2,candidato3, candidato4, candidato5));
         this.futuroClienteRepository.saveAll(List.of(fc1, fc2));
-        this.futuroCandidatoRepository.saveAll(List.of(candidato1));
 
     }
 

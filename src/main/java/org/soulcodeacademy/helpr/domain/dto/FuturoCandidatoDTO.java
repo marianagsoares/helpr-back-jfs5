@@ -4,6 +4,9 @@ import org.soulcodeacademy.helpr.domain.enums.Setor;
 
 import javax.validation.constraints.NotBlank;
 
+import javax.validation.constraints.NotNull;
+
+
 public class FuturoCandidatoDTO {
 
     @NotBlank(message = "nome completo é obrigatório")
@@ -17,7 +20,8 @@ public class FuturoCandidatoDTO {
     private String descricaoDasHabilidades;
 
 
-    @NotBlank(message = "Setor obrigatório")
+    @NotNull(message = "Setor obrigatório")
+
     private Setor setor;
 
 

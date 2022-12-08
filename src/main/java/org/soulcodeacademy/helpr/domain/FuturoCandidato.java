@@ -14,7 +14,7 @@ public class FuturoCandidato {
         @Column(nullable = false)
         String nomeCompleto;
 
-        @Column (nullable = false)
+        @Column (unique = true ,nullable = false)
         String email;
 
         @Column (nullable = false, length = 120)
@@ -32,7 +32,6 @@ public class FuturoCandidato {
                  this.nomeCompleto =  nomeCompleto;
                  this.email = email;
                  this.descricaoDasHabilidades = descricaoDasHabilidades;
-
 
        }
 
