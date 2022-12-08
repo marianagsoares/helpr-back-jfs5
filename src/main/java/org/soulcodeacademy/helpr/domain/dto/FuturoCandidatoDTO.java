@@ -1,4 +1,4 @@
-package org.soulcodeacademy.helpr.domain;
+package org.soulcodeacademy.helpr.domain.dto;
 
 import org.soulcodeacademy.helpr.domain.enums.Setor;
 
