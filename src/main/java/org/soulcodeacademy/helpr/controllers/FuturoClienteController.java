@@ -17,41 +17,41 @@ public class FuturoClienteController {
     private FuturoClienteService futuroClienteService;
 
 
-    @GetMapping("/futurosclientes")
+    @GetMapping("/clientes/futuros")
     public List<FuturoCliente> listar(){
         return this.futuroClienteService.listar();
     }
 
-    @GetMapping("/futurosclientes/{idFuturoCliente}")
+    @GetMapping("/clientes/futuros/{idFuturoCliente}")
     public FuturoCliente getFuturoClienteById(@PathVariable Integer idFuturoCliente){
         return this.futuroClienteService.getFuturoClienteById(idFuturoCliente);
     }
 
     //LISTAR POR EMAIL
-    @GetMapping("/futurosclientes/email")
+    @GetMapping("/clientes/futuros/email")
     public List<FuturoCliente> listarPorEmail(@RequestParam String email){
         return this.futuroClienteService.listarPorEmail(email);
     }
 
     //Listar POR CPF
-    @GetMapping("/futurosclientes/cpf")
+    @GetMapping("/clientes/futuros/cpf")
     public List<FuturoCliente> listarPorCpf(@RequestParam String cpf){
         return this.futuroClienteService.listarPorCpf(cpf);
     }
 
-    @PostMapping("/futurosclientes")
+    @PostMapping("/clientes/futuros")
     public FuturoCliente salvar(@Valid @RequestBody FuturoClienteDTO dto){
         FuturoCliente futuroCliente = this.futuroClienteService.salvar(dto);
         return futuroCliente;
     }
 
-    @PutMapping("/futurosclientes/{idFuturoCliente}")
+    @PutMapping("/clientes/futuros/{idFuturoCliente}")
     public FuturoCliente atualizar(@PathVariable Integer idFuturoCliente, @Valid @RequestBody FuturoClienteDTO dto){
         FuturoCliente futuroClienteAtualizado = this.futuroClienteService.atualizar(idFuturoCliente, dto);
         return futuroClienteAtualizado;
     }
 
-    @DeleteMapping("/futurosclientes/{idFuturoCliente}")
+    @DeleteMapping("/clientes/futuros/{idFuturoCliente}")
     public void deletar(@PathVariable Integer idFuturoCliente){
         this.futuroClienteService.deletar((idFuturoCliente));
     }
