@@ -1,4 +1,4 @@
-package org.soulcodeacademy.helpr.domain.dto.controllers.errors;
+package org.soulcodeacademy.helpr.controllers.errors;
 
 import java.time.LocalDateTime;
 

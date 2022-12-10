@@ -1,4 +1,4 @@
-package org.soulcodeacademy.helpr.domain.dto.controllers;
+package org.soulcodeacademy.helpr.controllers;
 
 
 import org.soulcodeacademy.helpr.domain.FuturoCliente;
