@@ -1,10 +1,12 @@
-package org.soulcodeacademy.helpr.controllers;
+package org.soulcodeacademy.helpr.domain.dto.controllers;
 
 
 import org.soulcodeacademy.helpr.domain.FuturoCliente;
 import org.soulcodeacademy.helpr.domain.dto.FuturoClienteDTO;
 import org.soulcodeacademy.helpr.services.FuturoClienteService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -40,9 +42,9 @@ public class FuturoClienteController {
     }
 
     @PostMapping("/clientes/futuros")
-    public FuturoCliente salvar(@Valid @RequestBody FuturoClienteDTO dto){
+    public ResponseEntity<FuturoCliente> salvar(@Valid @RequestBody FuturoClienteDTO dto){
         FuturoCliente futuroCliente = this.futuroClienteService.salvar(dto);
-        return futuroCliente;
+        return new ResponseEntity<>(futuroCliente, HttpStatus.CREATED);
     }
 
     @PutMapping("/clientes/futuros/{idFuturoCliente}")
@@ -52,7 +54,9 @@ public class FuturoClienteController {
     }
 
     @DeleteMapping("/clientes/futuros/{idFuturoCliente}")
-    public void deletar(@PathVariable Integer idFuturoCliente){
+    public ResponseEntity<Void> deletar(@PathVariable Integer idFuturoCliente){
+
         this.futuroClienteService.deletar((idFuturoCliente));
+        return ResponseEntity.noContent().build();
     }
 }

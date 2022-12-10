@@ -42,29 +42,29 @@ public class PopulateService {
         Cargo c3 = new Cargo(null, "Técnico geral", "Resolve os chamados urgentes", 12000.0);
 
         // Integer id, String nome, String email, String cpf, String senha, String foto, Cargo cargo
-        Funcionario f1 = new Funcionario(null, "Renato Pereira", "renato.pereira@gmail.com", "68258098144", encoder.encode("12345"), null, c1);
+        Funcionario f1 = new Funcionario(null, "Renato Pereira", "renato.pereira@gmail.com", "97762478060", encoder.encode("12345"), null, c1);
         f1.setPerfil(Perfil.ADMIN);
-        Funcionario f3 = new Funcionario(null, "Ricardo Santos", "ricardo.santos@gmail.com", "51127553672", encoder.encode("12345"), null, c2);
+        Funcionario f3 = new Funcionario(null, "Ricardo Santos", "ricardo.santos@gmail.com", "26294636566", encoder.encode("12345"), null, c2);
         f3.setPerfil(Perfil.ADMIN);
-        Funcionario f4 = new Funcionario(null, "Valeria Lima", "vl@gmail.com", "99987553672", encoder.encode("12345"), null, c1);
+        Funcionario f4 = new Funcionario(null, "Valeria Lima", "vl@gmail.com", "07235486414", encoder.encode("12345"), null, c1);
         f4.setPerfil(Perfil.ADMIN);
-        Funcionario f5 = new Funcionario(null, "Kelly Nunes", "kn@gmail.com", "55522212211", encoder.encode("12345"), null, c1);
+        Funcionario f5 = new Funcionario(null, "Kelly Nunes", "kn@gmail.com", "05746577111", encoder.encode("12345"), null, c1);
         f5.setPerfil(Perfil.ADMIN);
-        Funcionario f6 = new Funcionario(null, "José Pereira", "jose.pereira@gmail.com", "41127383671", encoder.encode("12345"), null, c2);
-        Funcionario f7 = new Funcionario(null, "Henrique Martins", "henrique.martins@gmail.com", "41127333371", encoder.encode("12345"), null, c1);
+        Funcionario f6 = new Funcionario(null, "José Pereira", "jose.pereira@gmail.com", "33472234970", encoder.encode("12345"), null, c2);
+        Funcionario f7 = new Funcionario(null, "Henrique Martins", "henrique.martins@gmail.com", "42327118212", encoder.encode("12345"), null, c1);
         f7.setPerfil(Perfil.ADMIN);
 
-        Funcionario f2 = new Funcionario(null, "Almir José", "almir.jose@gmail.com", "42222383333", encoder.encode("12345"), null, c2);
-        Funcionario f8 = new Funcionario(null, "Gabriel Braga", "gabriel.braga@gmail.com", "49999383671", encoder.encode("12345"), null, c1);
-        Funcionario f9 = new Funcionario(null, "Victor Icoma", "victor.icoma@gmail.com", "45555383671", encoder.encode("12345"), null, c1);
-        Funcionario f10 = new Funcionario(null, "Vanessa Santos", "vanessa.santos@gmail.com", "44444383671", encoder.encode("12345"), null, c2);
+        Funcionario f2 = new Funcionario(null, "Almir José", "almir.jose@gmail.com", "85332552505", encoder.encode("12345"), null, c2);
+        Funcionario f8 = new Funcionario(null, "Gabriel Braga", "gabriel.braga@gmail.com", "64287962877", encoder.encode("12345"), null, c1);
+        Funcionario f9 = new Funcionario(null, "Victor Icoma", "victor.icoma@gmail.com", "27461708414", encoder.encode("12345"), null, c1);
+        Funcionario f10 = new Funcionario(null, "Vanessa Santos", "vanessa.santos@gmail.com", "73757816056", encoder.encode("12345"), null, c2);
 
         // Integer id, String nome, String email, String cpf, String senha, String telefone
-        Cliente cl1 = new Cliente(null, "José Almir", "jose.almir@gmail.com", "12659185115", encoder.encode("batata"), "9999999999");
-        Cliente cl2 = new Cliente(null, "Pedro João", "pedro@gmail.com", "37734168302", encoder.encode("batata"), "9999999997");
-        Cliente cl3 = new Cliente(null, "Pedro Victor", "pedro.victor@gmail.com", "32234468302", encoder.encode("batata"), "9999999996");
-        Cliente cl4 = new Cliente(null, "Júnior Lima", "junior.lima@gmail.com", "32234468000", encoder.encode("batata"), "9999999995");
-        Cliente cl5 = new Cliente(null, "Carla Farias", "carla.farias@gmail.com", "33334468000", encoder.encode("batata"), "9999999994");
+        Cliente cl1 = new Cliente(null, "José Almir", "jose.almir@gmail.com", "43740115521", encoder.encode("batata"), "9999999999");
+        Cliente cl2 = new Cliente(null, "Pedro João", "pedro@gmail.com", "61197366709", encoder.encode("batata"), "9999999997");
+        Cliente cl3 = new Cliente(null, "Pedro Victor", "pedro.victor@gmail.com", "60680546405", encoder.encode("batata"), "9999999996");
+        Cliente cl4 = new Cliente(null, "Júnior Lima", "junior.lima@gmail.com", "42127421795", encoder.encode("batata"), "9999999995");
+        Cliente cl5 = new Cliente(null, "Carla Farias", "carla.farias@gmail.com", "97804134568", encoder.encode("batata"), "9999999994");
 
 
         Chamado ch1 = new Chamado(null, "Primeiro chamado do sistema", "Revisar as entidades criadas");
@@ -87,8 +87,8 @@ public class PopulateService {
         ch7.setStatus(StatusChamado.CONCLUIDO);
 
 
-        FuturoCliente fc1 = new FuturoCliente(null, "Josefina Mendes", "11086594037",  "josefina.mendes@gmail.com", "544558855");
-        FuturoCliente fc2 = new FuturoCliente(null, "Genésio Lima", "83924156042",  "genesio.lima@gmail.com", "54488888");
+        FuturoCliente fc1 = new FuturoCliente(null, "Josefina Mendes", "33877638597",  "josefina.mendes@gmail.com", "544558855");
+        FuturoCliente fc2 = new FuturoCliente(null, "Genésio Lima", "35884341008",  "genesio.lima@gmail.com", "54488888");
 
         FuturoCandidato candidato1 = new FuturoCandidato(null, "Maria Jose Da Silva", "mariajose@gmail.com", "Boa comunicação, Liderança");
         candidato1.setSetor(Setor.DESENVOLVIMENTO);

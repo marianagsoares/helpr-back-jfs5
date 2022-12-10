@@ -4,6 +4,8 @@ import org.soulcodeacademy.helpr.domain.Funcionario;
 import org.soulcodeacademy.helpr.domain.dto.FuncionarioDTO;
 import org.soulcodeacademy.helpr.services.FuncionarioService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -34,9 +36,9 @@ public class FuncionarioController {
 
     // POST = Representa inserção de dados
     @PostMapping("/funcionarios")
-    public Funcionario salvar(@Valid @RequestBody FuncionarioDTO dto) {
+    public ResponseEntity<Funcionario> salvar(@Valid @RequestBody FuncionarioDTO dto) {
         Funcionario funcionario = this.funcionarioService.salvar(dto);
-        return funcionario;
+        return new ResponseEntity<>(funcionario, HttpStatus.CREATED);
     }
 
     // PUT = Representa substituição de dados
@@ -47,7 +49,9 @@ public class FuncionarioController {
     }
 
     @DeleteMapping("/funcionarios/{idFuncionario}")
-    public void deletar(@PathVariable Integer idFuncionario) {
+    public ResponseEntity<Void> deletar(@PathVariable Integer idFuncionario) {
+
         this.funcionarioService.deletar(idFuncionario);
+        return ResponseEntity.noContent().build();
     }
 }
