@@ -4,6 +4,8 @@ import org.soulcodeacademy.helpr.domain.Cargo;
 import org.soulcodeacademy.helpr.domain.dto.CargoDTO;
 import org.soulcodeacademy.helpr.services.CargoService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
@@ -45,10 +47,10 @@ public class CargoController {
     // Podemos usar o mesmo endpoint para verbos diferentes
     @PreAuthorize("hasRole('ROLE_ADMIN')") // Apenas os admins podem acessar este endpoint
     @PostMapping("/cargos") // REQUISIÇÃO TIPO POST para /cargos
-    public Cargo salvar(@Valid @RequestBody CargoDTO cargo) {
+    public ResponseEntity<Cargo> salvar(@Valid @RequestBody CargoDTO cargo) {
         // @RequestBody - extrair o JSON do corpo e converte para Cargo (deserialização)
         Cargo salvo = this.cargoService.salvar(cargo);
-        return salvo; // A resposta será o cargo inserido
+        return  new ResponseEntity<>(salvo, HttpStatus.CREATED); // A resposta será o cargo inserido
     }
 
     // Mapeia requisições do verbo PUT
@@ -61,7 +63,9 @@ public class CargoController {
 
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     @DeleteMapping("/cargos/{idCargo}") // Verbo DELETE no /cargos/1
-    public void deletar(@PathVariable Integer idCargo) {
+    public ResponseEntity<Void> deletar(@PathVariable Integer idCargo) {
+
         this.cargoService.deletar(idCargo);
+        return ResponseEntity.noContent().build();
     }
 }

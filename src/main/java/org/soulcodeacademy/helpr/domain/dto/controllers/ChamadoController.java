@@ -6,6 +6,8 @@ import org.soulcodeacademy.helpr.domain.enums.StatusChamado;
 import org.soulcodeacademy.helpr.services.ChamadoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -28,8 +30,8 @@ public class ChamadoController {
     }
 
     @PostMapping("/chamados")
-    public Chamado salvar(@Valid @RequestBody ChamadoDTO dto) {
-        return this.chamadoService.salvar(dto);
+    public ResponseEntity<Chamado> salvar(@Valid @RequestBody ChamadoDTO dto) {
+        return new ResponseEntity<>(this.chamadoService.salvar(dto), HttpStatus.CREATED);
     }
 
     @PutMapping("/chamados/{idChamado}")

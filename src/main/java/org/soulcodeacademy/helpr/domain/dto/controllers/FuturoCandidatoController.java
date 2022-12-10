@@ -7,6 +7,8 @@ import org.soulcodeacademy.helpr.domain.dto.FuturoCandidatoDTO;
 import org.soulcodeacademy.helpr.domain.enums.Setor;
 import org.soulcodeacademy.helpr.services.FuturoCandidatoService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -53,20 +55,20 @@ public class FuturoCandidatoController {
 
     }
 
-
-
-
     // Salvar
     @PostMapping("/candidatos")
-    public FuturoCandidato salvar (@Valid @RequestBody FuturoCandidatoDTO dto){
+    public ResponseEntity<FuturoCandidato> salvar (@Valid @RequestBody FuturoCandidatoDTO dto){
         FuturoCandidato candidato = this.futuroCandidatoService.salvar(dto);
-        return candidato;
+        return new ResponseEntity<>(candidato, HttpStatus.CREATED);
     }
 
     // deletar
     @DeleteMapping("/candidatos/{idCandidato}")
-    public void deletar(@PathVariable Integer idCandidato){
+    public ResponseEntity<Void> deletar(@PathVariable Integer idCandidato){
+
         this.futuroCandidatoService.deletar(idCandidato);
+        return ResponseEntity.noContent().build();
+
     }
 
 

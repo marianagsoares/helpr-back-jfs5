@@ -4,6 +4,8 @@ import org.soulcodeacademy.helpr.domain.Cliente;
 import org.soulcodeacademy.helpr.domain.dto.ClienteDTO;
 import org.soulcodeacademy.helpr.services.ClienteService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -25,9 +27,9 @@ public class ClienteController {
     }
 
     @PostMapping("/clientes")
-    public Cliente salvarCliente(@Valid @RequestBody ClienteDTO dto) {
+    public ResponseEntity<Cliente> salvarCliente(@Valid @RequestBody ClienteDTO dto) {
         Cliente cliente = this.clienteService.salvar(dto);
-        return cliente;
+        return new ResponseEntity<>(cliente, HttpStatus.CREATED);
     }
 
     @PutMapping("/clientes/{idCliente}")
@@ -37,8 +39,10 @@ public class ClienteController {
     }
 
     @DeleteMapping("/clientes/{idCliente}")
-    public void deletar(@PathVariable Integer idCliente) {
+    public ResponseEntity<Void> deletar(@PathVariable Integer idCliente) {
+
         this.clienteService.deletar(idCliente);
+        return ResponseEntity.noContent().build();
     }
 }
 // Deserializar => JSON -> Classe
